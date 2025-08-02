@@ -164,82 +164,10 @@ nav ul li a {
 
 /* ✅ RESPONSIVE */
 @media (max-width: 600px) {
-  body {
-    font-size: 15px;
-    padding-top: 140px;
-  }
-
-  header {
-    padding: 10px 0;
-  }
-
-  .logo {
-    position: static;
-    display: block;
-    margin: 0 auto 8px auto;
-    width: 60px;
-  }
-
-  h1 {
-    font-size: 1.6em;
-  }
-
-  h2 {
-    font-size: 1.1em;
-  }
-
-  section {
-    padding: 12px;
-    max-width: 100%;
-  }
-
-  .item {
-    padding: 10px;
-    font-size: 0.95em;
-  }
-
-  .btn {
-    padding: 8px 12px;
-    font-size: 0.95em;
-  }
-
-  .sosmed-vertikal {
-    gap: 10px;
-    max-width: 100%;
-    margin: 10px auto;
-    font-size: 0.95em;
-  }
-
-  .ikon-sosmed {
-    width: 36px;
-    margin-right: 8px;
-  }
-
-  nav {
-    width: 100vw;
-    font-size: 1em;
-  }
-
-  nav ul li {
-    padding: 10px;
-  }
-
-  .hamburger {
-    top: 12px;
-    right: 12px;
-  }
-
-  footer {
-    padding: 8px;
-    font-size: 0.85em;
-  }
-
   .header-epul {
   display: flex;
   align-items: center;
-  padding: 20px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
 .logo {
@@ -248,34 +176,27 @@ nav ul li a {
 }
 
 .judul-deskripsi h1 {
-  font-size: 1.8em;
+  font-size: 24px;
   margin: 0;
 }
 
 .judul-deskripsi p {
-  font-size: 1em;
+  font-size: 14px;
   margin: 0;
 }
 
-/* Responsif buat HP */
+/* RESPONSIF untuk HP */
 @media (max-width: 600px) {
-  .header-epul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .logo {
-    margin-right: 0;
-    margin-bottom: 10px;
+    height: 40px;
   }
 
   .judul-deskripsi h1 {
-    font-size: 1.3em;
+    font-size: 18px;
   }
 
   .judul-deskripsi p {
-    font-size: 0.9em;
+    font-size: 12px;
   }
   }
-
 
