@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: 'Michroma', sans-serif;
+  background: url('Background\ 2.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  color:#eee;}
+
+  .hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* pindah ke kanan */
+  cursor: pointer;
+  z-index: 999;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0; /* menu keluar dari kanan */
+  background-color: rgba(0, 0, 0, 0.596);
+  width: 200px;
+  height: 100vh;
+  padding-top: 60px;
+  z-index: 998;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 15px;
+  border-bottom: 1px solid #444;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.sosmed-vertikal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+.sosmed-vertikal a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.ikon-sosmed {
+  width: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.ikon-sosmed:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+  .ikon-sosmed {
+    width: 50px;
+  }
+}
+
+
+ body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* Lapisan gelap transparan */
+  z-index: -1;
+  backdrop-filter: blur(12px);    /* Efek blur */
+}
+
+header {
+  background-color: #00000094;
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #00ff99;
+}
+
+section {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  color: #00cc66;
+}
+
+.item {
+  background: #000000b2;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #00cc66;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #01be36;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #000000a4;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.foto-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  border-radius: 60px;
+  margin-top: 15px;
+   position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
