@@ -6,33 +6,41 @@
   <title>Epul Wolf - Sample Pack & Remix</title>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hidden { display: none; }
+  </style>
 </head>
 <body>
 
-  <div class="hamburger" onclick="toggleMenu()">
+  <!-- MENU GARIS 3 -->
+  <div class="hamburger" onclick="toggleMenu()" style="position: absolute; top: 20px; right: 20px; cursor: pointer;">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <nav id="menu">
+  <!-- NAV MENU -->
+  <nav id="menu" class="hidden">
     <ul>
       <li><a href="#">Beranda</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
   </nav>
 
+  <!-- HEADER -->
   <header>
-    <img src="logo.jpg" alt="..." class="logo">
+    <img src="logo.jpg" alt="Logo Epul Wolf" class="logo">
     <h1>🎧 Epul Wolf</h1>
     <p>Sample Pack & Jasa Remix Lagu</p>
   </header>
 
+  <!-- TENTANG -->
   <section class="about">
     <h2>Tentang Epul Wolf</h2>
     <p>Produser musik dan remixer dari Sumedang. Spesialis genre EDM, remix koplo, dan remix viral TikTok. Siap bantu project kamu lebih meledak!</p>
   </section>
 
+  <!-- SAMPLE PACK -->
   <section class="products">
     <h2>🎵 Sample Pack</h2>
     <div class="item">
@@ -42,16 +50,17 @@
         Browser kamu tidak mendukung audio.
       </audio>
       <p>Isi: 50 drum loop, 30 vocal chop, 20 FX sound</p>
-      <img src="produk 1.png" alt="Produk" class="foto-banner">
+      <img src="produk 1.png" alt="Loading..." class="foto-banner">
       <p>Rp 30.000</p>
       <a href="https://wa.me/6289646602636" class="btn">Beli Sekarang</a>
     </div>
   </section>
 
+  <!-- JASA REMIX -->
   <section class="products">
     <h2>🎵 Jasa Remix</h2>
     <div class="item">
-      <h3>BISA STYLE:</h3>
+      <h3>BISA STYLE :</h3>
       <ul>
         <li>JDM</li>
         <li>ENAFF</li>
@@ -60,40 +69,47 @@
         <li>BECAK</li>
         <li>DLL</li>
       </ul>
-      <h3>HARGA:</h3>
+      <h3>HARGA :</h3>
       <p>Rp 50.000 - Rp 100.000 (tergantung request)</p>
       <p>Proses 1-3 hari kerja</p>
       <a href="https://wa.me/6289646602636" class="btn">Pesan Remix</a>
-      <img src="produk 1.png" alt="Remix" class="foto-banner">
+      <img src="produk 1.png" alt="Loading..." class="foto-banner">
     </div>
   </section>
 
+  <!-- KONTAK SOSMED -->
   <section id="kontak">
     <h2 style="text-align:center;">Ikuti media sosial Epul Wolf:</h2>
     <div class="sosmed-vertikal">
       <a href="https://www.youtube.com/@Epulproject" target="_blank">
-        <img src="yt.png" alt="YouTube" class="ikon-sosmed"><span>YouTube</span>
+        <img src="yt.png" alt="YouTube" class="ikon-sosmed">
+        <span>YouTube</span>
       </a>
       <a href="https://tiktok.com/@epul.remixer" target="_blank">
-        <img src="tiktok.png" alt="TikTok" class="ikon-sosmed"><span>TikTok</span>
+        <img src="tiktok.png" alt="TikTok" class="ikon-sosmed">
+        <span>Tiktok</span>
       </a>
       <a href="https://open.spotify.com/artist/1hsqFoOsmDnHzlr02n8oI8?si=AUArbR7tT_2cQ5IJx3mktw" target="_blank">
-        <img src="spotify.png" alt="Spotify" class="ikon-sosmed"><span>Spotify</span>
+        <img src="spotify.png" alt="Spotify" class="ikon-sosmed">
+        <span>Spotify</span>
       </a>
       <a href="https://www.instagram.com/epullwg__/" target="_blank">
-        <img src="ig.png" alt="Instagram" class="ikon-sosmed"><span>Instagram</span>
+        <img src="ig.png" alt="Instagram" class="ikon-sosmed">
+        <span>Instagram</span>
       </a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>📱 IG: @epullwg | WhatsApp: 089646602636</p>
     <p>&copy; 2025 Epul Wolf</p>
   </footer>
 
+  <!-- JS TOGGLE MENU -->
   <script>
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
+      document.getElementById("menu").classList.toggle("hidden");
     }
   </script>
 </body>
