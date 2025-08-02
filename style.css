@@ -1,15 +1,95 @@
 body {
   margin: 0;
   font-family: 'Michroma', sans-serif;
-  background: url('Background\ 2.jpeg') no-repeat center center fixed;
+  background: url('Background 2.jpeg') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-  color:#eee;}
+  min-height: 100vh;
+  color: #eee;
+  padding-top: 130px; /* Biar gak ketiban logo + header */
+}
 
-  .hamburger {
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  backdrop-filter: blur(12px);
+}
+
+header {
+  background-color: #00000094;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 997;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  border-radius: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #00ff99;
+}
+
+h2 {
+  color: #00cc66;
+}
+
+section {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.item {
+  background: #000000b2;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #00cc66;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #000000a4;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.foto-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.hamburger {
   position: fixed;
   top: 20px;
-  right: 20px; /* pindah ke kanan */
+  right: 20px;
   cursor: pointer;
   z-index: 999;
 }
@@ -25,7 +105,7 @@ body {
 nav {
   position: fixed;
   top: 0;
-  right: 0; /* menu keluar dari kanan */
+  right: 0;
   background-color: rgba(0, 0, 0, 0.596);
   width: 200px;
   height: 100vh;
@@ -41,7 +121,7 @@ nav ul {
 
 nav ul li {
   padding: 15px;
-  border-bottom: 1px solid #000000af;
+  border-bottom: 1px solid #444;
 }
 
 nav ul li a {
@@ -82,193 +162,75 @@ nav ul li a {
   transform: scale(1.2);
 }
 
-@media (max-width: 480px) {
-  .ikon-sosmed {
-    width: 50px;
+/* ✅ RESPONSIVE */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+    padding-top: 140px;
   }
-}
 
+  header {
+    padding: 10px 0;
+  }
 
- body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);  /* Lapisan gelap transparan */
-  z-index: -1;
-  backdrop-filter: blur(12px);    /* Efek blur */
-}
+  .logo {
+    position: static;
+    display: block;
+    margin: 0 auto 8px auto;
+    width: 60px;
+  }
 
-header {
-  background-color: #00000094;
-  padding: 30px;
-  text-align: center;
-}
+  h1 {
+    font-size: 1.6em;
+  }
 
-h1 {
-  margin: 0;
-  font-size: 2.5em;
-  color: #00ff99;
-}
+  h2 {
+    font-size: 1.1em;
+  }
 
-section {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
+  section {
+    padding: 12px;
+    max-width: 100%;
+  }
 
-h2 {
-  color: #00cc66;
-}
+  .item {
+    padding: 10px;
+    font-size: 0.95em;
+  }
 
-.item {
-  background: #000000b2;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-}
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.95em;
+  }
 
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #00cc66;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 10px;
-}
+  .sosmed-vertikal {
+    gap: 10px;
+    max-width: 100%;
+    margin: 10px auto;
+    font-size: 0.95em;
+  }
 
-.btn:hover {
-  background: #01be36;
-}
+  .ikon-sosmed {
+    width: 36px;
+    margin-right: 8px;
+  }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #000000a5;
-  color: #ffffff;
-  font-size: 0.9em;
-}
+  nav {
+    width: 100vw;
+    font-size: 1em;
+  }
 
-.foto-banner {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 15px;
-}
+  nav ul li {
+    padding: 10px;
+  }
 
-.logo {
-  width: 100px;
-  height: auto;
-  border-radius: 60px;
-  margin-top: 15px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
+  .hamburger {
+    top: 12px;
+    right: 12px;
+  }
 
- body {
-      font-family: 'Michroma', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: white;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    .logo {
-      width: 80px;
-      border-radius: 50%;
-    }
-    .hamburger {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    .hamburger div {
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      margin: 5px 0;
-    }
-    #menu {
-      background-color: #222;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      padding-top: 60px;
-      transition: transform 0.3s ease;
-      transform: translateX(100%);
-    }
-    #menu.show {
-      transform: translateX(0);
-    }
-    #menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #menu ul li {
-      padding: 10px 20px;
-    }
-    #menu ul li a {
-      color: white;
-      text-decoration: none;
-    }
-    .sosmed-vertikal {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      gap: 10px;
-      padding: 20px;
-    }
-    .ikon-sosmed {
-      width: 24px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    .sosmed-vertikal a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-    .products {
-      padding: 20px;
-    }
-    .item {
-      border: 1px solid #444;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-    .foto-banner {
-      width: 100%;
-      height: auto;
-      margin-top: 10px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #f90;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #00000092;
-    }
-
-    @media (max-width: 600px) {
-      .sosmed-vertikal {
-        align-items: flex-start;
-      }
-    }
+  footer {
+    padding: 8px;
+    font-size: 0.85em;
+  }
+  }
