@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Goldman', sans-serif;
-  background-image: url('Background 2.jpeg');
+  background-image: url('Background.jpg');
   background-size: cover;
   background-position: center;
   backdrop-filter: blur(12px);
@@ -169,4 +169,5 @@ footer {
     font-size: 1em;
   }
 }
+
 
