@@ -99,6 +99,82 @@ Mau lagumu makin stand out? Gunakan juga jasa remix profesional dari kami. Cocok
   </div>
   </section>
 
+  <section id="remix-samples" class="container">
+  <h2 class="title">🎧 Contoh Hasil Remixan Kami</h2>
+  <p class="subtitle">
+    Dengerin beberapa cuplikan hasil remix kami. Klik play untuk preview — setiap lagu otomatis akan pause ketika kamu play lagu lain.
+  </p>
+
+  <div class="grid">
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #1 — Jedag-Jedug Style</h3>
+        <p class="card-sub">Durasi: 3:42 • BPM: 130</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="Bosil.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #2 — Bootleg Style</h3>
+        <p class="card-sub">Durasi: 4:47 • BPM: 130</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="Bootleg.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #3 — ENAFF Style</h3>
+        <p class="card-sub">Durasi: 6:38 • BPM: 140</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="ENAFF.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Script pause audio lain + animasi equalizer -->
+<script>
+  const audios = Array.from(document.querySelectorAll('.audio'));
+  audios.forEach(a => {
+    const card = a.closest('.card');
+    a.addEventListener('play', () => {
+      audios.forEach(x => { if (x !== a) x.pause(); });
+      card.classList.add('playing');
+    });
+    a.addEventListener('pause', () => { card.classList.remove('playing'); });
+    a.addEventListener('ended', () => { card.classList.remove('playing'); });
+  });
+</script>
+
+
+
   <section class="sosmed">
   <h2>🌐 Media Sosial</h2>
   <div class="sosmed-links">
@@ -135,9 +211,7 @@ Mau lagumu makin stand out? Gunakan juga jasa remix profesional dari kami. Cocok
     btn.classList.remove("clicked");
   });
 </script>
-
 </section>
-
 
    <footer>
     <p>📱 IG: @epul.wolf | WhatsApp: +6289646602636</p>
