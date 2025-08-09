@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Goldman:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Michroma&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Epul Wolf - Sample Pack & Remix</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+  <img src="logo.jpg" alt="Logo Epul Wolf" class="logo">
+<div class="judul-deskripsi">
+    <h1>🎧 Epul Wolf</h1>
+    <p>Sample Pack & Jasa Remix Lagu</p>
+    <!-- Tombol Garis 3 -->
+<div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <!-- Menu Navigasi -->
+  <nav id="menu">
+    <a href="ww.html">Beranda</a>
+    <a href="produk.html">Sample Pack</a>
+    <a href="Jasa Remix.html">Jasa Remix</a>
+    <a href="sosmed.html">Sosial Media</a>
+  </nav>
+  <script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  });
+</script>
+</header>
+
+<section class="products">
+  <div class="item">
+    <h2>🔧 Jasa Remix</h2>
+  <h3>Remix lagu kamu biar siap upload ke TikTok, YouTube, atau Spotify</h3> 
+    <ul>
+      <li>Jasa Remix Biasa: Rp 50.000</li>
+      <li>Jasa Remix Lengkap + Mastering: Rp 80.000</li>
+    </ul>
+    <a href="https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20Order%20Jasa%20Remix%20nya😁%3F" class="btn" id="btn">Pesan Sekarang</a>
+  </div>
+  </section>
+
+  <section id="remix-samples" class="container">
+  <h2 class="title">🎧 Contoh Hasil Remixan Kami</h2>
+  <p class="subtitle">
+    Dengerin beberapa cuplikan hasil remix kami. Klik play untuk preview — setiap lagu otomatis akan pause ketika kamu play lagu lain.
+  </p>
+
+  <div class="grid">
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #1 — Jedag-Jedug Style</h3>
+        <p class="card-sub">Durasi: 3:42 • BPM: 130</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="Bosil.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #2 — Bootleg Style</h3>
+        <p class="card-sub">Durasi: 4:47 • BPM: 130</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="Bootleg.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #3 — ENAFF Style</h3>
+        <p class="card-sub">Durasi: 6:38 • BPM: 140</p>
+      </div>
+      <div class="player-wrap">
+        <div class="equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <audio class="audio" controls preload="metadata">
+          <source src="ENAFF.mp3" type="audio/mpeg" />
+          Browser kamu tidak mendukung audio.
+        </audio>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Script pause audio lain + animasi equalizer -->
+<script>
+  const audios = Array.from(document.querySelectorAll('.audio'));
+  audios.forEach(a => {
+    const card = a.closest('.card');
+    a.addEventListener('play', () => {
+      audios.forEach(x => { if (x !== a) x.pause(); });
+      card.classList.add('playing');
+    });
+    a.addEventListener('pause', () => { card.classList.remove('playing'); });
+    a.addEventListener('ended', () => { card.classList.remove('playing'); });
+  });
+</script>
+<footer>
+    <p>📱 IG: @epullwg__ | WhatsApp: +6289646602636</p>
+    <p>&copy; 2025 Epul Wolf</p> 
+  </footer>
+
+</body>
+</html>
