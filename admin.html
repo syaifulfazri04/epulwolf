@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin - Epul Wolf Produk</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<h1>Admin Panel - Manage Produk</h1>
+
+<form id="form-produk">
+  <input type="text" id="nama" placeholder="Nama Produk" required />
+  <input type="text" id="deskripsi" placeholder="Deskripsi Produk" required />
+  <input type="number" id="harga" placeholder="Harga (angka)" required />
+  <input type="url" id="link" placeholder="Link Pembelian" required />
+  <button type="submit">Tambah Produk</button>
+</form>
+
+<table border="1" style="margin-top:20px; width:100%">
+  <thead>
+    <tr><th>Nama</th><th>Harga</th><th>Link</th><th>Aksi</th></tr>
+  </thead>
+  <tbody id="produk-table"></tbody>
+</table>
+
+<script>
+  // Firebase config dari Project Settings (ganti dengan config kamu)
+  const firebaseConfig = {
+   apiKey: "AIzaSyC8Ix3l6hzOvfomitKruGpEnLLV82Dpfro",
+  authDomain: "epul-wolf.firebaseapp.com",
+  projectId: "epul-wolf",
+  storageBucket: "epul-wolf.firebasestorage.app",
+  messagingSenderId: "706850970810",
+  appId: "1:706850970810:web:a10ba59c62b55a5b32f683",
+  measurementId: "G-CZ9RK5B6VJ"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const form = document.getElementById('form-produk');
+  const produkTable = document.getElementById('produk-table');
+
+  // Render list produk di table
+  function renderTable(doc) {
+    const tr = document.createElement('tr');
+    const data = doc.data();
+
+    tr.innerHTML = `
+      <td>${data.nama}</td>
+      <td>Rp ${data.harga.toLocaleString()}</td>
+      <td><a href="${data.link}" target="_blank">Link</a></td>
+      <td><button data-id="${doc.id}">Hapus</button></td>
+    `;
+
+    produkTable.appendChild(tr);
+
+    tr.querySelector('button').addEventListener('click', e => {
+      const id = e.target.getAttribute('data-id');
+      if(confirm('Yakin ingin hapus produk ini?')) {
+        db.collection('produk').doc(id).delete();
+      }
+    });
+  }
+
+  // Listen realtime produk
+  db.collection('produk').orderBy('nama').onSnapshot(snapshot => {
+    produkTable.innerHTML = '';
+    snapshot.forEach(doc => renderTable(doc));
+  });
+
+  // Tambah produk
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nama = form.nama.value.trim();
+    const deskripsi = form.deskripsi.value.trim();
+    const harga = parseInt(form.harga.value);
+    const link = form.link.value.trim();
+
+    if (!nama || !deskripsi || !harga || !link) {
+      alert('Lengkapi semua data!');
+      return;
+    }
+
+    db.collection('produk').add({ nama, deskripsi, harga, link })
+      .then(() => form.reset());
+  });
+</script>
+
+</body>
+</html>
