@@ -5,25 +5,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Goldman:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Michroma&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Epul Wolf - Sample Pack & Remix</title>
-  <link rel="stylesheet" href="style.css">
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-</head>
-<body>
 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
   <header>
     <img src="logo.jpg" alt="Logo Epul Wolf" class="logo">
     <div class="judul-deskripsi">
       <h1>🎧 Epul Wolf</h1>
       <p>Sample Pack & Jasa Remix Lagu</p>
+      <!-- Tombol Garis 3 -->
       <div class="menu-toggle" id="menu-toggle">☰</div>
-      <nav id="menu">
+
+      <!-- Menu Navigasi -->
+      <nav id="menu" style="display:none;">
         <a href="ww.html">Beranda</a>
         <a href="produk.html">Sample Pack</a>
         <a href="Jasa Remix.html">Jasa Remix</a>
         <a href="sosmed.html">Sosial Media</a>
       </nav>
-        <script>
+      <script>
   document.getElementById('menu-toggle').addEventListener('click', function() {
     const menu = document.getElementById('menu');
     menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
@@ -31,59 +33,77 @@
 </script>
   </header>
 
-  <!-- bagian produk -->
   <section class="products">
     <h2>🎵 Sample Pack</h2>
-    <div id="produkContainer"></div>
+    <div id="produkContainer">
+      <!-- Produk akan di-render di sini oleh JS -->
+      <p>Loading produk...</p>
+    </div>
   </section>
 
   <footer>
     <p>📱 IG: @epullwg__ | WhatsApp: +6289646602636</p>
-    <p>&copy; 2025 Epul Wolf</p>
+    <p>&copy; 2025 Epul Wolf</p> 
   </footer>
 
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.1/firebase-app.js";
+    import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.6.1/firebase-firestore.js";
 
-<script>
-  // Firebase config dari Project Settings (ganti dengan config kamu)
-  const firebaseConfig = {
-   apiKey: "AIzaSyC8Ix3l6hzOvfomitKruGpEnLLV82Dpfro",
-  authDomain: "epul-wolf.firebaseapp.com",
-  projectId: "epul-wolf",
-  storageBucket: "epul-wolf.firebasestorage.app",
-  messagingSenderId: "706850970810",
-  appId: "1:706850970810:web:a10ba59c62b55a5b32f683",
-  measurementId: "G-CZ9RK5B6VJ"
-  };
+    // TODO: Ganti ini dengan config Firebase project kamu
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-  const produkListEl = document.getElementById('produk-list');
+    // Referensi collection produk
+    const produkCol = collection(db, "products");
+    const produkContainer = document.getElementById("produkContainer");
 
-  function renderProduk(doc) {
-    const data = doc.data();
-    const div = document.createElement('div');
-    div.classList.add('item');
-    div.innerHTML = `
-      <h2>${data.nama}</h2>
-      <p>${data.deskripsi}</p>
-      <p>Rp ${data.harga.toLocaleString()}</p>
-      <a href="${data.link}" class="btn" target="_blank">Beli Sekarang</a>
-    `;
-    produkListEl.appendChild(div);
-  }
+    // Fungsi render produk
+    function renderProduk(data) {
+      if(data.size === 0) {
+        produkContainer.innerHTML = "<p>Belum ada produk.</p>";
+        return;
+      }
 
-  // Load produk dari Firestore dan tampilkan
-  db.collection('produk').orderBy('nama').onSnapshot(snapshot => {
-    produkListEl.innerHTML = ''; // clear dulu
-    snapshot.forEach(doc => {
-      renderProduk(doc);
+      let html = "";
+      data.forEach(doc => {
+        const produk = doc.data();
+        html += `
+          <div class="item">
+            <h2>${produk.nama}</h2>
+            <p>${produk.deskripsi}</p>
+            <p>Rp ${produk.harga.toLocaleString()}</p>
+            ${produk.image ? `<img src="${produk.image}" alt="${produk.nama}" class="gambar-produk">` : ""}
+            <a href="${produk.link}" class="btn" target="_blank" rel="noopener noreferrer">Beli Sekarang</a>
+          </div>
+        `;
+      });
+      produkContainer.innerHTML = html;
+    }
+
+    // Real-time listener Firestore
+    onSnapshot(produkCol, (snapshot) => {
+      renderProduk(snapshot);
     });
-  });
-</script>
+
+    // Menu toggle script
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      menu.style.flexDirection = 'column'; // biar di mobile vertikal
+    });
+  </script>
 
 </body>
 </html>
-
-
