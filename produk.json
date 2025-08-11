@@ -1,30 +1,30 @@
 [
       {
-        nama: "Sample Pack Bosil ENAFF",
-        deskripsi: "Isi: Rtm, Beat Loop, Toet-Toet, Bass, Vocal Chop",
-        harga: 50000,
-        link: "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
-        gambar: null
+        "nama": "Sample Pack Bosil ENAFF",
+        "deskripsi": "Isi: Rtm, Beat Loop, Toet-Toet, Bass, Vocal Chop",
+        "harga": 50000,
+        "link": "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
+        "gambar": null
       },
       {
-        nama: "EWG-Kendang bajidoran",
-        deskripsi: "Isi: 4 Kendang loop, One shoot kendang lengkap",
-        harga: 20000,
-        link: "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
-        gambar: null
+        "nama": "EWG-Kendang bajidoran",
+       "deskripsi": "Isi: 4 Kendang loop, One shoot kendang lengkap",
+        "harga": 20000,
+        "link": "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
+        "gambar": null
       },
       {
-        nama: "Macdi Kendang Loop Pack",
-        deskripsi: "Isi: berbagai Jenis Kendang Loop Yang Lagi Virall",
-        harga: 25000,
-        link: "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
-        gambar: null
+        "nama": "Macdi Kendang Loop Pack",
+        "deskripsi": "Isi: berbagai Jenis Kendang Loop Yang Lagi Virall",
+        "harga": 25000,
+        "link": "https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20sample%20pack%20nya,%20Masih%20tersedia?%3F",
+        "gambar": null
       },
       {
-        nama: "FREE SAMPLE PACK",
-        deskripsi: "",
-        harga: 0,
-        link: "https://drive.google.com/file/d/1n1WErEhpmdYZnxHt5qI0SAyXHIwM-qAE/view?usp=drive_link",
-        gambar: "produk 1.jpg"
+        "nama": "FREE SAMPLE PACK",
+        "deskripsi": "",
+        "harga": 0,
+        "link": "https://drive.google.com/file/d/1n1WErEhpmdYZnxHt5qI0SAyXHIwM-qAE/view?usp=drive_link",
+        "gambar": "produk 1.jpg"
       }
     ]
