@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Epul Wolf - Sample Pack & Remix</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Epul Wolf - Sample Pack</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Logo Epul Wolf" class="logo" />
-    <div class="judul-deskripsi">
-      <h1>🎧 Epul Wolf</h1>
-      <p>Sample Pack & Jasa Remix Lagu</p>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <nav id="menu">
-        <a href="index.html">Beranda</a>
-        <a href="produk.html">Sample Pack</a>
-        <a href="Jasa Remix.html">Jasa Remix</a>
-        <a href="sosmed.html">Sosial Media</a>
-      </nav>
-    </div>
-  </header>
 
-  <section class="products">
-    <h2>🎵 Sample Pack</h2>
-    <div id="produkContainer"></div>
-  </section>
+<header>
+  <img src="logo.jpg" alt="Logo Epul Wolf" class="logo" />
+  <div class="judul-deskripsi">
+    <h1>🎧 Epul Wolf</h1>
+    <p>Sample Pack & Jasa Remix Lagu</p>
+  </div>
+</header>
 
-  <footer>
-    <p>📱 IG: @epullwg__ | WhatsApp: +6289646602636</p>
-    <p>&copy; 2025 Epul Wolf</p>
-  </footer>
+<section class="products">
+  <h2>🎵 Sample Pack</h2>
+  <div id="produk-list"></div>
+</section>
 
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+<footer>
+  <p>📱 IG: @epullwg__ | WhatsApp: +6289646602636</p>
+  <p>&copy; 2025 Epul Wolf</p>
+</footer>
+
+<script>
+  // Firebase config dari Project Settings (ganti dengan config kamu)
+  const firebaseConfig = {
+   apiKey: "AIzaSyC8Ix3l6hzOvfomitKruGpEnLLV82Dpfro",
+  authDomain: "epul-wolf.firebaseapp.com",
+  projectId: "epul-wolf",
+  storageBucket: "epul-wolf.firebasestorage.app",
+  messagingSenderId: "706850970810",
+  appId: "1:706850970810:web:a10ba59c62b55a5b32f683",
+  measurementId: "G-CZ9RK5B6VJ"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const produkListEl = document.getElementById('produk-list');
+
+  function renderProduk(doc) {
+    const data = doc.data();
+    const div = document.createElement('div');
+    div.classList.add('item');
+    div.innerHTML = `
+      <h2>${data.nama}</h2>
+      <p>${data.deskripsi}</p>
+      <p>Rp ${data.harga.toLocaleString()}</p>
+      <a href="${data.link}" class="btn" target="_blank">Beli Sekarang</a>
+    `;
+    produkListEl.appendChild(div);
+  }
+
+  // Load produk dari Firestore dan tampilkan
+  db.collection('produk').orderBy('nama').onSnapshot(snapshot => {
+    produkListEl.innerHTML = ''; // clear dulu
+    snapshot.forEach(doc => {
+      renderProduk(doc);
     });
+  });
+</script>
 
-    fetch('produk.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const container = document.getElementById('produkContainer');
-        container.innerHTML = '';
-        data.forEach((p) => {
-          container.innerHTML += `
-            <div class="item">
-              <h2>${p.nama}</h2>
-              <p>${p.deskripsi}</p>
-              <p>Rp ${p.harga.toLocaleString()}</p>
-              ${
-                p.gambar
-                  ? `<img src="${p.gambar}" alt="${p.nama}" class="gambar-produk" />`
-                  : ''
-              }
-              <a href="${p.link}" class="btn" target="_blank">Beli Sekarang</a>
-            </div>
-          `;
-        });
-      })
-      .catch((err) => {
-        document.getElementById('produkContainer').innerText = 'Gagal memuat produk.';
-        console.error(err);
-      });
-  </script>
 </body>
 </html>
