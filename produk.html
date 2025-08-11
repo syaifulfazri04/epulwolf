@@ -23,7 +23,12 @@
         <a href="Jasa Remix.html">Jasa Remix</a>
         <a href="sosmed.html">Sosial Media</a>
       </nav>
-    </div>
+        <script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  });
+</script>
   </header>
 
   <!-- bagian produk -->
@@ -80,4 +85,5 @@
 
 </body>
 </html>
+
 
