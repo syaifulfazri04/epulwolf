@@ -24,14 +24,27 @@
     <a href="ww.html">Beranda</a>
     <a href="produk.html">Sample Pack</a>
     <a href="Jasa Remix.html">Jasa Remix</a>
-    <a href="sosmed">Sosial Media</a>
+    <a href="sosmed.html">Sosial Media</a>
   </nav>
   <script>
   document.getElementById('menu-toggle').addEventListener('click', function() {
     const menu = document.getElementById('menu');
     menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
   });
-</script>
+
+  // Scroll reveal animasi
+  function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        el.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+  </script>
 </header>
 
  <!-- bagian produk -->
@@ -59,9 +72,9 @@
     </div>
     
    <div class="item">
-      <h2> FREE SAMPLE PACK</h2
-      <p>Rp 0</p>
+      <h2> FREE SAMPLE PACK</h2>
       <img src="produk 1.jpg" alt="loading..." class="gambar-produk">
+      <p>Rp 0</p>
       <a href="https://drive.google.com/file/d/1n1WErEhpmdYZnxHt5qI0SAyXHIwM-qAE/view?usp=drive_link" class="btn" id="btn">Download</a>
     </div>
   </section>
@@ -71,4 +84,5 @@
   </footer>
 </body>
 </html>
+
 
