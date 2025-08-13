@@ -5,12 +5,21 @@ body {
   background-image: url('Background.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   backdrop-filter: blur(12px);
   color: #ffffff;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
 header {
-  background-color: #000000;
+  background-color: #000000ba;
   padding: 10px 10px;
   display: flex;
   align-items: center;
