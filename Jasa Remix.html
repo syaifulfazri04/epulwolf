@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -21,6 +22,7 @@
   <!-- Menu Navigasi -->
   <nav id="menu">
     <a href="index.html">Beranda</a>
+    <a href="plugin.html">Produk Plugin</a>
     <a href="produk.html">Sample Pack</a>
     <a href="Jasa Remix.html">Jasa Remix</a>
     <a href="sosmed.html">Sosial Media</a>
@@ -33,7 +35,7 @@
 </script>
 </header>
 
-<section class="products" style="position:relative;overflow:hidden;">
+<section class="products">
   <div class="item">
     <h2>🔧 Jasa Remix</h2>
   <h3>Remix lagu kamu biar siap upload ke TikTok, YouTube, atau Spotify</h3> 
@@ -44,70 +46,74 @@
     <a href="https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20Order%20Jasa%20Remix%20nya😁%3F" class="btn" id="btn">Pesan Sekarang</a>
   </div>
   </section>
-
-
-<section class="products">
-  <h2 class="title">🎧 Contoh Hasil Remixan Kami</h2>
+<!-- bagian musik -->
+   <section id="remix-samples" class="container">
+  <h2 class="title">Contoh Hasil Remixan Kami</h2>
   <p class="subtitle">
     Dengerin beberapa cuplikan hasil remix kami. Klik play untuk preview — setiap lagu otomatis akan pause ketika kamu play lagu lain.
   </p>
-
-
-  <div class="item">
-    <h2>Remix #1 — Jedag-Jedug Style</h2>
-    <p>Durasi: 3:42 • BPM: 130</p>
-    <div class="equalizer" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="custom-audio-player" data-src="Bosil.mp3">
-      <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
-      <div class="progress-wrap">
-        <div class="progress-bar"><div class="progress"></div></div>
-        <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+  <div class="grid">
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #1 — Jedag-Jedug Style</h3>
+        <p class="card-sub">Durasi: 3:42 • BPM: 130</p>
       </div>
-      <div class="audio-bar-right"></div>
-      <div class="audio-bar-eq">
-        <span></span><span></span><span></span><span></span>
+      <div class="player-wrap">
+        <div class="custom-audio-player" data-src="Bosil.mp3">
+          <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress"></div></div>
+            <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+          </div>
+          <div class="audio-bar-eq">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-
-  <div class="item">
-    <h2>Remix #2 — Bootleg Style</h2>
-    <p>Durasi: 4:47 • BPM: 130</p>
-    <div class="equalizer" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="custom-audio-player" data-src="Bootleg.mp3">
-      <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
-      <div class="progress-wrap">
-        <div class="progress-bar"><div class="progress"></div></div>
-        <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+    </article>
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #2 — Bootleg Style</h3>
+        <p class="card-sub">Durasi: 4:47 • BPM: 130</p>
       </div>
-      <div class="audio-bar-right"></div>
-    </div>
-  </div>
-
-
-  <div class="item">
-    <h2>Remix #3 — ENAFF Style</h2>
-    <p>Durasi: 6:38 • BPM: 140</p>
-    <div class="equalizer" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="custom-audio-player" data-src="ENAFF.mp3">
-      <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
-      <div class="progress-wrap">
-        <div class="progress-bar"><div class="progress"></div></div>
-        <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+      <div class="player-wrap">
+        <div class="custom-audio-player" data-src="Bootleg.mp3">
+          <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress"></div></div>
+            <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+          </div>
+          <div class="audio-bar-eq">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
       </div>
-      <div class="audio-bar-right"></div>
-    </div>
+    </article>
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="meta">
+        <h3 class="card-title">Remix #3 — ENAFF Style</h3>
+        <p class="card-sub">Durasi: 6:38 • BPM: 140</p>
+      </div>
+      <div class="player-wrap">
+        <div class="custom-audio-player" data-src="ENAFF.mp3">
+          <button class="play-btn" aria-label="Play"><span class="icon-play"></span></button>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress"></div></div>
+            <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+          </div>
+          <div class="audio-bar-eq">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- Script custom audio player + animasi equalizer -->
+<!-- Script custom audio player modern -->
 <script>
 // Custom audio player modern
 document.querySelectorAll('.custom-audio-player').forEach(function(player, idx) {
@@ -204,34 +210,10 @@ document.querySelectorAll('.custom-audio-player').forEach(function(player, idx) 
     return m + ':' + (s < 10 ? '0' : '') + s;
   }
 });
-
-// Equalizer animasi (untuk semua .equalizer di .item)
-document.querySelectorAll('.item').forEach(function(item) {
-  const eq = item.querySelector('.equalizer');
-  const audio = item.querySelector('audio');
-  if (!eq || !audio) return;
-  let eqInterval;
-  audio.addEventListener('play', () => {
-    eq.classList.add('playing');
-    eqInterval = setInterval(() => {
-      eq.querySelectorAll('span').forEach((bar, i) => {
-        bar.style.height = (Math.random() * 16 + 8) + 'px';
-      });
-    }, 120);
-  });
-  function stopEq() {
-    eq.classList.remove('playing');
-    clearInterval(eqInterval);
-    eq.querySelectorAll('span').forEach(bar => bar.style.height = '8px');
-  }
-  audio.addEventListener('pause', stopEq);
-  audio.addEventListener('ended', stopEq);
-});
 </script>
 <footer>
     <p>📱 IG: @epul.wolf | WhatsApp: +6289646602636</p>
     <p>&copy; 2025 Epul Wolf</p> 
   </footer>
-
 </body>
 </html>
