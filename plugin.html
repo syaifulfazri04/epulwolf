@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Goldman:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Michroma&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Epul Wolf - Sample Pack & Remix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo Epul Wolf" class="logo">
+    <div class="judul-deskripsi">
+      <h1>� Epul Wolf</h1>
+      <p>Sample Pack & Jasa Remix Lagu</p>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+    <nav id="menu">
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Sample Pack</a>
+      <a href="Jasa Remix.html">Jasa Remix</a>
+      <a href="plugin.html">Produk Plugin</a>
+      <a href="sosmed.html">Sosial Media</a>
+    </nav>
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        const menu = document.getElementById('menu');
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      });
+    </script>
+  </header>
+
+  <section class="products">
+  <h2 class="title">🎛️ Produk Plugin Musik</h2>
+  <p class="subtitle">Upgrade kualitas musikmu dengan plugin-plugin terbaik pilihan Epul Wolf! Semua plugin di sini sudah teruji untuk berbagai DAW dan siap membuat hasil karya kamu lebih profesional, clean, dan kekinian.<br><br><b>Promo khusus bulan ini:</b> Dapatkan support instalasi gratis & konsultasi setting plugin langsung dari Epul Wolf untuk setiap pembelian plugin di bawah!</p>
+    <div class="grid">
+      <div class="item" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+  <img src="ozone 11.png" alt="Ozone 11" class="gambar-produk" style="width:100%;display:block;margin:0 auto 8px auto;">
+  <h2 style="margin:0 0 4px 0;">Ozone 11 Elements</h2>
+  <p style="text-align:center;margin:0 0 4px 0;">
+    <b>Mastering instan, hasil profesional!</b><br>
+    Ozone 11 Elements adalah plugin mastering all-in-one yang memudahkan kamu mendapatkan sound radio-ready hanya dengan beberapa klik. Cocok untuk pemula maupun pro yang ingin workflow cepat tanpa ribet.<br>
+    <span style="color:#00cc66;font-size:0.98em;">Bikin lagu kamu terdengar lebih tebal, balance, dan siap upload ke Spotify/YouTube!</span>
+  </p>
+  <p style="font-weight:bold;color:#00cc66;font-size:1.08em;margin:0 0 6px 0;">Rp 50.000</p>
+  <a href="https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20plugin%20Ozone%2011%20Elements" class="btn" id="btn" style="margin-top:0;">Beli Sekarang</a>
+      </div>
+      <div class="item" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+  <img src="auto tune.png" alt="Auto Tune" class="gambar-produk" style="width:100%;display:block;margin:0 auto 8px auto;">
+  <h2 style="margin:0 0 4px 0;">Auto-Tune Pro</h2>
+  <p style="text-align:center;margin:0 0 4px 0;">
+    <b>Vokal auto merdu & kekinian!</b><br>
+    Auto-Tune Pro adalah plugin tuning vokal paling populer di dunia. Dapatkan efek vokal halus, natural, atau robotik ala lagu-lagu hits TikTok dan chart global. Setting mudah, hasil langsung beda!<br>
+    <span style="color:#00cc66;font-size:0.98em;">Cocok untuk recording, live, maupun mixing lagu genre apapun.</span>
+  </p>
+  <p style="font-weight:bold;color:#00cc66;font-size:1.08em;margin:0 0 6px 0;">Rp 35.000</p>
+  <a href="https://wa.me/6289646602636?text=Halo%20kak%2C%20saya%20mau%20beli%20plugin%20Auto-Tune%20Pro" class="btn" id="btn" style="margin-top:0;">Beli Sekarang</a>
+      </div>
+      <!-- Tambahkan plugin lain di sini -->
+    </div>
+  </section>
+
+  <footer>
+  <p>📱 IG: @epul.wolf | WhatsApp: +6289646602636</p>
+  <p>&copy; 2025 Epul Wolf</p>
+  </footer>
+</body>
+</html>
