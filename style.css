@@ -603,47 +603,6 @@ p {
   
 }
 
-/* Tombol garis tiga */
-.menu-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  color: white;
-  z-index: 2147483647;
-    background: rgba(10,10,20,0.92);
-    border-radius: 6px;
-    padding: 8px 14px;
-  box-shadow: 0 2px 12px #00ff9950;
-  pointer-events: auto;
-    outline: none;
-}
-
-/* Menu awalnya hidden */
-#menu {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.95);
-  padding: 14px 22px;
-  border-radius: 12px;
-  z-index: 9998;
-  box-shadow: 0 4px 24px #00ff9930;
-}
-
-#menu a {
-  color: white;
-  text-decoration: none;
-  padding: 8px;
-  display: block;
-}
-
-#menu a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
 
 
 
