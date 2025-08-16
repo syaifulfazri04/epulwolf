@@ -23,9 +23,19 @@
       <a href="sosmed.html">Sosial Media</a>
     </nav>
     <script>
-      document.getElementById('menu-toggle').addEventListener('click', function() {
-        const menu = document.getElementById('menu');
-        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      menuToggle.addEventListener('click', function() {
+        const isOpen = menu.style.display === 'flex';
+        menu.style.display = isOpen ? 'none' : 'flex';
+        document.body.classList.toggle('menu-open', !isOpen);
+      });
+      // Tutup menu jika klik di luar area menu (khusus mobile)
+      document.addEventListener('click', function(e) {
+        if (menu.style.display === 'flex' && !menu.contains(e.target) && e.target !== menuToggle) {
+          menu.style.display = 'none';
+          document.body.classList.remove('menu-open');
+        }
       });
     </script>
   </header>
